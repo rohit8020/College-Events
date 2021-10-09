@@ -54,6 +54,7 @@ router.post("/register", [
       email: req.body.email,
       college: req.body.college
     }
+    
     var newUser = new User(user);
 
     User.register(newUser, req.body.password, function(err, user){

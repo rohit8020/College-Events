@@ -187,11 +187,6 @@ router.put("/:id", middleware.checkEventOwnership, [
     })
     .normalizeEmail()
     .trim(),
-    body('contactNumber')
-    .isNumeric()
-    .isLength("10")
-    .withMessage("The Mobile Number Should be Indian and of the 10 digit!")
-    .trim(),
     body('websiteLink')
     .custom((value) => {
         if (!(value.startsWith("https://")||value.startsWith("http://"))) {
