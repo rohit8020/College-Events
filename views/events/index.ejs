@@ -1,0 +1,33 @@
+<%- include('../partials/header'); -%>
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Welcome to College-Events!</h1>
+            <p>View all the events happening in several colleges of India</p>
+            <p>
+            <a href="/events/new" class="btn btn-primary btn-large">Add New event!</a>
+            </p>
+        </div>
+    </div>
+    
+    <div class="row text-center"  >
+        <% events.forEach(function(event){ %>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="img-thumbnail" style="margin-top: 20px;">
+                    <img src="/<%= event.image %>" class="img-fluid">
+                <div class="caption">
+                    <h4><%= event.name %></h4>
+                </div>
+                <p>
+                	<a href="/events/<%= event._id %>" class="btn btn-primary">More Info</a>
+                </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+
+<%- include("../partials/footer"); -%>
+

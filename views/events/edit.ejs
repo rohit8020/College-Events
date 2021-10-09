@@ -1,0 +1,41 @@
+<%- include('../partials/header'); -%>
+
+<div class="container">
+    <h1 style="text-align: center;">Edit <%= event.name %></h1>
+    <div style="width: 30%; margin: 50px auto;">
+        <form action="/events/<%= event._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input class="form-control" type="text"  name="title" value="<%= event.title %>" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="file" name="image"  value="<%= event.image %>" >
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="college" value="<%= event.college %>" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="url" name="websiteLink" value="<%= event.websiteLink %>" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="url" name="videoLink" value="<%= event.videoLink %>" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="number" name="contactNumber" value="<%= event.contactNumber %>" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="email" name="contactEmail" value="<%= event.contactEmail %>" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="description" value="<%= event.description %>" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-success btn-block">Submit!</button>
+            </div>
+        </form>
+        <a href="/events">Go Back</a>
+    </div>
+    
+
+</div>
+
+<%- include('../partials/footer'); -%>

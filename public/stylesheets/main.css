@@ -1,0 +1,26 @@
+body{
+    background: #101010;
+}
+ img {
+    width: 100%;
+}
+
+img{
+    height: 80px;
+}
+
+.img-thumbnail {
+    padding: 0;
+}
+
+.img-thumbnail .caption-full {
+    padding: 9px;
+}
+
+#delete-form{
+    display: inline;
+}
+
+.alert{
+    margin-top: 70px;
+}

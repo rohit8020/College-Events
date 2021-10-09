@@ -1,0 +1,41 @@
+<%- include('../partials/header'); -%>
+
+<div class="container">
+    <h1 style="text-align: center;">Create a New event</h1>
+    <div style="width: 30%; margin: 50px auto;">
+        <form action="/events" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="file" name="image"  required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="videoLink" placeholder="youtube video url or Embed Tag!">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="description" placeholder="description" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="email" name="contactEmail" placeholder="contactEmail" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="number" name="contactNumber" placeholder="contactNumber" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="college" placeholder="college" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="url" name="websiteLink" placeholder="websiteLink" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-success btn-block">Submit!</button>
+            </div>
+        </form>
+        <a href="/events">Go Back</a>
+    </div>
+    
+
+</div>
+
+<%- include('../partials/footer'); -%>
