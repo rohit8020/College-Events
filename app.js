@@ -77,6 +77,6 @@ app.use("/events", eventRoutes);
 app.use("/events/:id/comments", commentRoutes);
 
 
-app.listen(8080, function(){
+app.listen(process.env.PORT,process.env.IP, function(){
    console.log("The College Server has started!"); 
 });
