@@ -53,11 +53,12 @@ router.post("/register", [
         if(err){
             req.flash("error", err.message)
             res.redirect("register");
-        } 
-        passport.authenticate("local")(req, res, function(){
+        }else{
+          passport.authenticate("local")(req, res, function(){
             req.flash("success", "Welcome To College-Events " + user.username);
             res.redirect("/login");
-        });
+          });
+        }      
     });
 });
 
