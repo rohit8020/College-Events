@@ -34,7 +34,7 @@ router.post("/register", [
     .normalizeEmail(),
     body('college')
   .isLength({min:3 , max:200 })
-  .withMessage('The college should be of minimum 3 and maximum of the length 200 letters!')
+  .withMessage('The college name should be of minimum 3 and maximum of the length 200 letters!')
   .trim(),
   body('password')
     .isLength({ min: 5 })
@@ -48,7 +48,7 @@ router.post("/register", [
       req.flash("error", errors.array()[0].msg);
       return res.redirect('back');
     }
-    var newUser = new User({username: req.body.username, email: req.body.email, confirmed: false});
+    var newUser = new User({username: req.body.username, email: req.body.email, college: req.body.college});
     User.register(newUser, req.body.password, function(err, user){
         if(err){
             req.flash("error", err.message)
